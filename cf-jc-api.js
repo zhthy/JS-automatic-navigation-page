@@ -85,14 +85,14 @@
         var fastestUrl = "";
         var fastestTime = Infinity;
 
-        // for (var i = 0; i < urls.length; i++) {
-        //     var sessionTime = await calculateSessionEstablishmentTime();
-        //     alert("域名 " + urls[i] + " 的会话建立时间为：" + sessionTime + " 毫秒");
-        //     if (sessionTime < fastestTime) {
-        //         fastestTime = sessionTime;
-        //         fastestUrl = urls[i];
-        //     }
-        // }
+        for (var i = 0; i < urls.length; i++) {
+            var sessionTime = await calculateSessionEstablishmentTime();
+            alert("域名 " + urls[i] + " 的会话建立时间为：" + sessionTime + " 毫秒");
+            if (sessionTime < fastestTime) {
+                fastestTime = sessionTime;
+                fastestUrl = urls[i];
+            }
+        }
 
         if (fastestUrl !== "") {
             if (confirm("速度最快的备选域名为 " + fastestUrl + "，是否重定向？")) {
